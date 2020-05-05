@@ -3,12 +3,13 @@
 This project can be used to reproduce the finite MDPs experiments presented in:
  - the ICML2019 paper: Safe Policy Improvement with Baseline Bootstrapping, by Romain Laroche, Paul Trichelair, and Rémi Tachet des Combes. (SPIBB)
  - the ECML-PKDD2019 paper: Safe Policy Improvement with Soft Baseline Bootstrapping, by Kimia Nadjahi, Romain Laroche, and Rémi Tachet des Combes. (Soft-SPIBB)
-  
+ - the AAMAS2020 paper: Safe Policy Improvement with an Estimated Baseline Policy, by Thiago D. Simão, Romain Laroche, and Rémi Tachet des Combes.
+
 For the DQN implementation of SPIBB and Soft-SPIBB, please refer to the git repository at [this address](https://github.com/rems75/SPIBB-DQN).
 
 ## Prerequisites
 
-The project is implemented in Python 3.5 and requires *numpy* and *scipy*.
+The project is implemented in Python 3.5 and requires *numpy*, *scipy*, *pandas* and *openpyxl*.
 
 ## Usage
 
@@ -34,17 +35,21 @@ We include the following:
 	* Random MDPs environment.
 - SPIBB experiments:
     * Gridworld experiment of Section 3.1. Run:
-    
+
         `python gridworld_main.py #name_of_experiment# #random_seed#`
-    * Gridworld experiment with random behavioural policy of Section 3.2. Run: 
-	
+    * Gridworld experiment with random behavioural policy of Section 3.2. Run:
+
 		`python gridworld_random_behavioural_main.py #name_of_experiment# #random_seed#`
     * Random MDPs experiment of Section 3.3. Run:
-     
+
 		`python randomMDPs_main.py #name_of_experiment# #random_seed#`
-- Soft-SPIBB Random MDPs experiment of Section 4.1.Run: 
+- Soft-SPIBB Random MDPs experiment of Section 4.1.Run:
 
 	`python soft_randomMDPs_main.py #name_of_experiment# #random_seed#`
+
+- Random MDPs with unknown behaviour policy. Experiment of Section 4.1(Figure 1). Run:
+
+    `python randomMDPs_unknownBehaviourPolicy_main.py #name_of_experiment# #random_seed#`
 
 We DO NOT include the following:
 - The hyper-parameter search (Appendix C.2 in SPIBB paper): it should be easy to re-implement.
@@ -59,7 +64,6 @@ This project is BSD-licensed.
 ## Reference
 
 Please use the following bibtex entry if you use this code for SPIBB:
-
 ```
 @inproceedings{Laroche2019,
     title={Safe Policy Improvement with Baseline Bootstrapping},
@@ -76,5 +80,15 @@ Please use the following bibtex entry if you use this code for Soft-SPIBB:
     author={Nadjahi, Kimia and Laroche, Romain and Tachet des Combes, R\'emi},
     booktitle={Proceedings of the 2019 European Conference on Machine Learning and Principles and Practice of Knowledge Discovery in Databases (ECML-PKDD)},
     year={2019}
+}
+```
+
+Please use the following bibtex entry if you use this code for algorithms using an estimate of the behaviour policy:
+```
+@inproceedings{SimaoLarocheTachet2020,
+    author    = {Sim\~ao, Thiago D. and  Laroche, Romain and Tachet des Combes, R\'emi},
+    title     = {Safe Policy Improvement with an Estimated Baseline Policy},
+    booktitle={Proceedings of the 19th International Conference on Autonomous Agents and Multi-Agent Systems (AAMAS)},
+    year      = {2020},
 }
 ```
